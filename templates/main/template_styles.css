@@ -2461,3 +2461,8 @@ skins available:
 .btn-holder:hover::after {
     display: block
 }
+
+.up__button {
+
+	padding-bottom: 10rem;
+}

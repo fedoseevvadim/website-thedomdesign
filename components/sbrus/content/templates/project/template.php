@@ -3,11 +3,11 @@
 
 <div class="container">
 
-    <div class="row" style="padding-bottom: 2rem;">
+    <div class="row" style="padding-bottom: 2rem; padding-top: 4rem;">
         <div class="col-md-12 text-center">
             <h1>
                 <?
-                $APPLICATION->IncludeFile("/local/components/sbrus/content/templates/how_we_work/include/title.php", Array(), Array(
+                $APPLICATION->IncludeFile("/local/components/sbrus/content/templates/project/include/title.php", Array(), Array(
                     "MODE"      => "html",                                           // будет редактировать в веб-редакторе
                     "NAME"      => "Редактирование включаемой области раздела",      // текст всплывающей подсказки на иконке
                 ));
@@ -23,9 +23,8 @@
             ?>
             <div class="col-md-4 text-center">
 
-                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;">
-                <h4 style="padding-bottom: 1rem;"><?=$arItem['NAME']?></h4>
-                <p class="text-left"><?=$arItem['PREVIEW_TEXT']?></p>
+                <img class="img-responsive" src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;">
+                <div style="padding-bottom: 1rem;"><?=$arItem['NAME']?></div>
 
             </div>
             <?
