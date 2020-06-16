@@ -1,0 +1,17 @@
+.tariffHeight{
+    height:150px;
+}
+
+.colored_text {
+    color: var(--main-color-price);
+}
+
+.price {
+    color: #ffffff;
+    background-color: var(--main-color-price);
+}
+
+.totalPrice {
+    font-weight: bold;
+    font-size: 14px;
+}
