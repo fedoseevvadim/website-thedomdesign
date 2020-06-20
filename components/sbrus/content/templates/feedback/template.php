@@ -6,7 +6,7 @@
     <div class="row">
 
         <div class="col-md-6">
-            <img src="/local/components/sbrus/content/templates/feedback/images/feedback.png" class="img-responsive">
+            <img src="/local/components/sbrus/content/templates/feedback/images/feedback.png" class="img-responsive" width="100%">
         </div>
 
         <div class="col-md-6 align-self-center">

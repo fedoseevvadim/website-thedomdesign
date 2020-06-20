@@ -7,10 +7,13 @@
 
     <div class="row">
 
+        <div class="col-md-3">
+        </div>
+
         <?
         foreach ( $arResult["ITEMS"] as $arItem ) {
             ?>
-            <div class="col-md-4 text-left">
+            <div class="col-md-3 text-left">
 
                 <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;">
                 <p><?=$arItem['PREVIEW_TEXT']?></p>

@@ -15,7 +15,7 @@
 
         </div>
 
-        <div class="col-md-4 align-self-center align-self-center">
+        <div class="col-md-4 align-self-center align-self-center text-white">
 
             <h1 style="padding-bottom: 2rem;">
                 <?
@@ -27,18 +27,18 @@
             </h1>
 
 
-            <form style="padding-top: 1rem;">
+            <form style="padding-top: 1rem; padding-left: 1rem; padding-right: 1rem;">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Введите имя" width="30%">
+                    <input type="text" class="form-control form_input" id="name" placeholder="Введите имя" width="30%">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" id="email" placeholder="email">
+                    <input type="text" class="form-control form_input" id="email" placeholder="email">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" id="phoneNumber" placeholder="Введите номер телефона">
+                    <input type="text" class="form-control form_input" id="phoneNumber" placeholder="Введите номер телефона">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-lg btn-block button" onclick="submitFeedBackForm();">Заказать</button>

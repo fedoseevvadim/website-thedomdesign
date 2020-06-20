@@ -15,10 +15,13 @@
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/styles.css">
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/template_styles.css">
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/adaptive.css">
-<link rel="stylesheet" type="text/css" href="/bitrix/templates/main/assets/slick.css">
-<link rel="stylesheet" type="text/css" href="/bitrix/templates/main/assets/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/slick.css">
+<link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/slick-theme.css">
 <script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/assets/js/html5.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.min.js" type="text/javascript"></script>
 
@@ -44,4 +47,4 @@
 
 <?}else{?>
 <a class="up__button scroll" href="#wrapper"></a>
-<?}?> 
+<?}?>

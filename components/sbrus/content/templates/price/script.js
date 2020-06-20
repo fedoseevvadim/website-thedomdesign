@@ -23,8 +23,14 @@ function selectTariff (id) {
     let selElem       = document.getElementById(id);
     let square        = parseInt( document.getElementById('square').value ) ;
     let elemStep      = document.getElementById('step'+id);
+    let elShowMore       = document.getElementsByName("showMore");
+    let elemButtonShowMore     = document.getElementById('buttonShowMore'+id);
 
     selectedTariff = id;
+
+    elShowMore.forEach((element) => {
+        element.setAttribute("hidden", true);
+    });
 
     elPrice.forEach((element) => {
         element.setAttribute("style", "padding-top: 1rem; background-color: #ffffff; color: #000000");
@@ -38,5 +44,28 @@ function selectTariff (id) {
 
     totalPrice.innerText = currencyFormat ( price[id] * square );
     selElem.setAttribute("style", "padding-top: 1rem; color: #ffffff; background-color: " + color[id] + ";");
+    elemButtonShowMore.removeAttribute("hidden", true);
+
+}
+
+function showMore ( id ) {
+
+    let elShowMore       = document.getElementsByName("showMore");
+    let elemButtonShowMore     = document.getElementById('buttonShowMore'+id);
+    let elemButtons      = document.getElementsByName('buttonShowMore');
+
+    elShowMore.forEach((element) => {
+
+        element.setAttribute("hidden", true);
+
+        if ( element.id === 'showMore'+id ) {
+            element.removeAttribute("hidden", false);
+        }
+
+    });
+
+    elemButtons.forEach((element) => {
+        element.setAttribute("hidden", true);
+    });
 
 }

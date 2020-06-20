@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <div class="content-log">  
 	<div class="article__logo">
 		<h4 class="article__logo-h4">Интерьерные решения</h4>
-		<a href="/"><img src="/bitrix/templates/main/img/logo_new.png"></a><h4 class="article__logo-name-h4">Алёны Царёвой</h4>
+		<a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo_new.png"></a><h4 class="article__logo-name-h4">Алёны Царёвой</h4>
 	</div>
 	<div class="content">
 		<div class="right_bar">
@@ -70,7 +70,7 @@ $this->setFrameMode(true);
 		</div>	
 		
 
-	<div class="decor"><img src="/bitrix/templates/main/img/decor_down.png"/></div>
+	<div class="decor"><img src="<?=SITE_TEMPLATE_PATH?>/img/decor_down.png"/></div>
 		<div class="article__text">
 			<div class='article__text__scroll'>
 				<p>
@@ -82,7 +82,7 @@ $this->setFrameMode(true);
 				</p>
 			</div>
 		</div>    
-	<div class="decor"><img src="/bitrix/templates/main/img/decor_up.png"/></div>
+	<div class="decor"><img src="<?=SITE_TEMPLATE_PATH?>/img/decor_up.png"/></div>
 	
 	<div class="soc_link">
 		<script type="text/javascript">(function() {

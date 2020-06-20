@@ -83,7 +83,7 @@
     display: block;
     z-index: 500;
     top: 278px;
-    background: url(/bitrix/templates/main/img/sprite.png) no-repeat 0 -138px;
+    background: url(/local/templates/main/img/sprite.png) no-repeat 0 -138px;
     width: 68px;
     height: 68px;
     opacity: 0.5;
@@ -111,7 +111,7 @@
     display: block;
     z-index: 500;
     top: 278px;
-    background: url(/bitrix/templates/main/img/sprite.png) no-repeat 0 0;
+    background: url(/local/templates/main/img/sprite.png) no-repeat 0 0;
     width: 68px;
     height: 68px;
     opacity: 0.5;

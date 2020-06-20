@@ -59,9 +59,6 @@
                     $arrPrice[$arItem['ID']] = $arItem['PROPERTIES']['PRICE']['VALUE'];
                     $arrColor[$arItem['ID']] = $arItem['PROPERTIES']['COLOR']['VALUE'];
 
-
-                    //var_dump($arItem['PROPERTIES']['STEP1']['VALUE']['TEXT']);
-
                     if ( $i === 0 ) {
                         $color = "color: #ffffff; background-color: " . $arItem['PROPERTIES']['COLOR']['VALUE'];
                         $selectedTariff = $arItem['ID'];
@@ -104,6 +101,8 @@
 
                 $step1 = htmlspecialcharsBack($arItem['PROPERTIES']['STEP1']['VALUE']['TEXT']);
                 $step2 = htmlspecialcharsBack($arItem['PROPERTIES']['STEP2']['VALUE']['TEXT']);
+                $showMorestep1 = htmlspecialcharsBack($arItem['PROPERTIES']['SHOW_MORE_STEP_1']['VALUE']['TEXT']);
+                $showMorestep2 = htmlspecialcharsBack($arItem['PROPERTIES']['SHOW_MORE_STEP_2']['VALUE']['TEXT']);
                 $arrSteps[$arItem['ID']] = $arItem['ID'];
 
                 $hidden = "hidden";
@@ -121,22 +120,34 @@
 
                             <?=$step1?>
 
+                            <div id="showMore<?=$arItem['ID']?>" <?=$hidden?> name="showMore">
+                                <?=$showMorestep1?>
+                            </div>
+
                     </div>
 
                     <div class="col-md-6">
 
                             <?=$step2?>
 
+                        <div id="showMore<?=$arItem['ID']?>" <?=$hidden?> name="showMore">
+                            <?=$showMorestep2?>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-12 text-center" style="padding-top: 1rem;" id="buttonShowMore<?=$arItem['ID']?>" name="buttonShowMore">
+                        <img src="/local/components/sbrus/content/templates/price/images/show_more.png" onclick="showMore(<?=$arItem['ID']?>)">
                     </div>
 
                 </div>
+
 
                 <?
 
             }
             ?>
-
-
 
         </div>
     </div>

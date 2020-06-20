@@ -120,7 +120,7 @@ $strAlt = (
 			<?if(!empty($arResult['nav']['next']['DETAIL_PAGE_URL'])):?><div class='aticle__nav'><a href="<?=$arResult['nav']['next']['DETAIL_PAGE_URL']?>">Следующая статья <span>&#8594;</span></a></div><?endif;?>
 		</div>	
 
-		<div class="decor"><img src="/bitrix/templates/main/img/decor_down.png"/></div>
+		<div class="decor"><img src="/local/templates/main/img/decor_down.png"/></div>
 
 	<div class="inner">
     	<div class="article_text">
