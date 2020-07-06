@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="content-log">  
+<div class="content-log">
 	<div class="article__logo">
 		<h4 class="article__logo-h4">Интерьерные решения</h4>
 		<a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo_new.png"></a><h4 class="article__logo-name-h4">Алёны Царёвой</h4>
@@ -27,13 +27,13 @@ $this->setFrameMode(true);
 	</div>
 </div>
 <header id="header">
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-		<div class="photos_block blog">
-				<div class="big_photo" style="max-width:100%;">
-					<img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>" alt="">
-				</div>	
-		</div>      
-	<?else:?>
+<!--	--><?//if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
+<!--		<div class="photos_block blog">-->
+<!--				<div class="big_photo" style="max-width:100%;">-->
+<!--					<img src="--><?//=$arResult['DETAIL_PICTURE']['SRC'];?><!--" alt="">-->
+<!--				</div>-->
+<!--		</div>-->
+<!--	--><?//else:?>
 	<?/*<div class="content abs w100" style="z-index:999; top:150px;">
 		   <div class="content">
 					<div class="right_bar" style="float:right; margin-right: 5%">
@@ -45,7 +45,7 @@ $this->setFrameMode(true);
 					</div>
 			</div>
 	</div> */?>
-			<section class="center slider_slik">	
+			<section class="center slider_slik">
 				<?foreach($arResult["PROPERTIES"]["detail_gallery"]["VALUE"] as $PHOTO => $val):?>
 						<?
 						$rsFile = CFile::GetByID($val);
@@ -55,8 +55,8 @@ $this->setFrameMode(true);
 					<div><img src="<?=$file['src']; ?>"  alt="<?=$arResult['NAME'];?>"></div>
 					<?}?>
 					<?endforeach?>
-				</section>	
-	<?endif?>
+				</section>
+	<?//endif?>
 </header>
 <main id="main">
 
@@ -67,8 +67,8 @@ $this->setFrameMode(true);
 				<?if(!empty($arResult['PROPERTIES']['descript']['VALUE'])):?><p><?=$arResult['PROPERTIES']['descript']['VALUE'];?></p><?endif;?>
 			</div>
 			<div class='aticle__nav'><?if(!empty($arResult['nav']['next']['DETAIL_PAGE_URL'])):?><a href="<?=$arResult['nav']['next']['DETAIL_PAGE_URL']?>">Следующий проект <span>&#8594;</span></a><?endif;?></div>
-		</div>	
-		
+		</div>
+
 
 	<div class="decor"><img src="<?=SITE_TEMPLATE_PATH?>/img/decor_down.png"/></div>
 		<div class="article__text">
@@ -81,9 +81,9 @@ $this->setFrameMode(true);
 					<?=$arResult['DETAIL_TEXT'];?>
 				</p>
 			</div>
-		</div>    
+		</div>
 	<div class="decor"><img src="<?=SITE_TEMPLATE_PATH?>/img/decor_up.png"/></div>
-	
+
 	<div class="soc_link">
 		<script type="text/javascript">(function() {
 		  if (window.pluso)if (typeof window.pluso.start == "function") return;

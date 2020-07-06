@@ -8,7 +8,8 @@
 <?$APPLICATION->ShowHead();?>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Cuprum|Lora:400,400i&amp;subset=cyrillic-ext" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/font-awesome/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="--><?//=SITE_TEMPLATE_PATH?><!--/assets/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/tilteffect.css" />
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/global.css">
 <link rel="stylesheet" type="text/css" href="<?=SITE_TEMPLATE_PATH?>/assets/interactive.css">

@@ -9,12 +9,13 @@ foreach($arResult as $arItem):
 	if($arParams["MAX_LEVEL"] == 1 && $arItem["DEPTH_LEVEL"] > 1) 
 		continue;
 ?>
+
 	<?if($arItem["SELECTED"]):?>
 		<li><a href="<?=$arItem["LINK"]?>" class="menu_items_style active"><?=$arItem["TEXT"]?></a></li>
 	<?else:?>
 		<li><a href="<?=$arItem["LINK"]?>" class = "menu_items_style"><?=$arItem["TEXT"]?></a></li>
 	<?endif?>
-	
+
 <?endforeach?>
 
 </ul>

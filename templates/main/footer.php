@@ -31,7 +31,7 @@ if($APPLICATION->getCurPage()=='/'){?>
         </div>
         <div class="company__info">
             <div class="company__info-logo">
-                <img src="/bitrix/templates/main/img/logo_first_screen.png" />
+                <img src="<?=SITE_TEMPLATE_PATH?>/img/logo_first_screen.png" />
             </div>
             <div class="company__info-left">
                 <p>Интерьерные решения</p>
@@ -358,6 +358,41 @@ if ( $APPLICATION->GetCurPage() === "/how_we_work/" )  {
 <?
 }
 
+// Эта часть нарушает работу страницы /portfolio/
+// поскольку использует bootstrap
+// поэтому модальное окно вынесено сюда
+if ( $APPLICATION->GetCurPage() === "/how_we_work/" )  {
+?>
+    <!-- Modal -->
+    <div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <?$APPLICATION->IncludeComponent(
+                        "sbrus:content",
+                        "feedback",
+                        Array(
+                            "IBLOCK_ID" => "feedBackForm",
+                            "IBLOCK_TYPE" => "work",
+                        )
+                    );?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?
+
+}
 ?>
 
 
@@ -368,57 +403,57 @@ if ( $APPLICATION->GetCurPage() === "/how_we_work/" )  {
 <script src="<?=SITE_TEMPLATE_PATH?>/js/bannerscollection_zoominout.js" type="text/javascript"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.maskedinput.min.js" type="text/javascript"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/form_script.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/assets/js/owl.carousel.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/assets/js/owl.carousel.js" type="text/javascript"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/assets/js/tiltfx.js"></script>
-<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/assets/js/script.js"></script>
+<script src="<?=SITE_TEMPLATE_PATH?>/assets/js/script.js" type="text/javascript"></script>
 
 <script src="<?=SITE_TEMPLATE_PATH?>/js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(document).on('ready', function() {
-      $(".slider_slik").slick({
-    centerMode: true,
-    centerPadding: '400px',
-    slidesToShow: 1,
-	responsive: [
-    {
-      breakpoint: 1400,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '200px',
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 1200,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '100px',
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '10px',
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '5px',
-        slidesToShow: 1
-      }
-    }
-  ]
-      });
+        $(".slider_slik").slick({
+            centerMode: true,
+            centerPadding: '400px',
+            slidesToShow: 1,
+            responsive: [
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '200px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '100px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '10px',
+                        slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '5px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
 
     });
 </script>

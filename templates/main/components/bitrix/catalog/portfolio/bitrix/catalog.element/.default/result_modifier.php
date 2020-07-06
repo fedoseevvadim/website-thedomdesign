@@ -1,8 +1,14 @@
-<?		$res = CIBlockElement::GetList(
-					array("ID" => "ASC"),
+<?
+
+$arrElem = Bitrix\Iblock\ElementTable::getList([
+	'filter' => ["IBLOCK_ID" => 9 ]
+])->fetchAll();
+
+$res = CIBlockElement::GetList(
+					array("SORT" => "ASC"),
 					array("IBLOCK_ID" =>  $arResult['ORIGINAL_PARAMETERS']['IBLOCK_ID'],   "ACTIVE" => "Y",),
 					false, 
-					array("nPageSize" => 1, "nElementID" => $arResult['ID']),
+					array("nPageSize" => 1, "nElementID" => $arResult['ID'], "iNumPage" => $_GET['page']),
 					array("ID", "DETAIL_PAGE_URL")
                );
 
@@ -11,12 +17,28 @@
 						{
 						 $arFields = $ob->GetFields();
 
-							if($arFields['ID']!=$arResult['ID']){
+							//if($arFields['ID']!=$arResult['ID']){\
+
+							if ( (int) $_GET['page'] === 1 ) {
+
+								$arResult['nav']['next'] = $arFields;
+
+							} else if ( count($arrElem) === (int) $_GET['page'] ) {
+
+								$arResult['nav']['prev']=$arFields;
+
+							} else {
+
 								if($arFields['RANK']<$arResult['nav']['prev']['RANK'])
 									$arResult['nav']['prev']=$arFields;
 								else
 									$arResult['nav']['next']=$arFields;
+
 							}
+
+
+							//}
+
 						}
 ?>
 <?  

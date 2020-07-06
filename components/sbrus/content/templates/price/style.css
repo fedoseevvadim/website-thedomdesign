@@ -2,6 +2,12 @@
     height:150px;
 }
 
+@media (max-width: 767px) {
+    .tariffHeight{
+        height:110px;
+    }
+}
+
 .colored_text {
     color: var(--main-color-price);
 }

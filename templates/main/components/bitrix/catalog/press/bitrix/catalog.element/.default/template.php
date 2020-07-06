@@ -86,7 +86,7 @@ $strAlt = (
         <? } else { ?>
         <img class="tilt-effect" data-tilt-options='{ "opacity" : 0.6, "movement": { "perspective" : 1500, "translateX" : 10, "translateY" : 10, "translateZ" : 2, "rotateX" : 3, "rotateY" : 3 } }' src="<? echo CFile::GetPath($arResult["PROPERTIES"]["top_pic_catalog"]["VALUE"]) ?>" alt="">
         <? } ?>
-        
+
         <div class="content">
         	<div class="left_bar">
 					<div class="logo">
@@ -118,7 +118,7 @@ $strAlt = (
 				<?if(!empty($arResult['PROPERTIES']['descript']['VALUE'])):?><p><?=$arResult['PROPERTIES']['descript']['VALUE'];?></p><?endif;?>
 			</div>
 			<?if(!empty($arResult['nav']['next']['DETAIL_PAGE_URL'])):?><div class='aticle__nav'><a href="<?=$arResult['nav']['next']['DETAIL_PAGE_URL']?>">Следующая статья <span>&#8594;</span></a></div><?endif;?>
-		</div>	
+		</div>
 
 		<div class="decor"><img src="/local/templates/main/img/decor_down.png"/></div>
 
@@ -126,40 +126,40 @@ $strAlt = (
     	<div class="article_text">
         	<?=$arResult['PREVIEW_TEXT'];?>
         </div>
-        
+
         <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
         <div class="big_photo">
 			<img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>" alt="">
 		</div>
         <?endif?>
-        
-        
+
+
   	<div class="article_text">
         	<?=$arResult['DETAIL_TEXT'];?>
         </div>
-    
-    
+
+
     <? if ($arResult["DISPLAY_PROPERTIES"]['related']){?>
     		<div class="similar_articles blog">
 				<p>Похожие статьи</p>
-			</div>    
+			</div>
         <div class="media_articles_list blog detailed_article">
         	<div class="row">
-         <?$related_arr = $arResult["PROPERTIES"]["related"]["VALUE"]?> 	
+         <?$related_arr = $arResult["PROPERTIES"]["related"]["VALUE"]?>
                         <?
 $arSelect = Array("ID", "IBLOCK_ID", "NAME", "DATE_CREATE", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DETAIL_PAGE_URL", "DATE_ACTIVE_FROM","PROPERTY_*");//IBLOCK_ID и ID обязательно должны быть указаны, см. описание arSelectFields выше
 $arFilter = Array("IBLOCK_ID"=>8, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y", "ID" => $related_arr);
 $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
 while($ob = $res->GetNextElement()):?>
-  
-  
- 
+
+
+
 <?
-$arFields = $ob->GetFields();  
+$arFields = $ob->GetFields();
 //print_r($arFields);
 $arProps = $ob->GetProperties();
 //print_r($arProps);
-?>  
+?>
 
 			<div class="item">
             	<div class="inn_item">
@@ -167,7 +167,7 @@ $arProps = $ob->GetProperties();
                     	<a href="<?=$arFields["DETAIL_PAGE_URL"]?>" style="background-image: url(<?=CFile::getPath($arFields["PREVIEW_PICTURE"])?>);" class="cover"></a>
                     </div>
                     <div class="description">
-                   
+
                     	<div class="date">
                         	<p>
                             	от <?
@@ -187,12 +187,12 @@ echo CIBlockFormatProperties::DateFormat($arParams["DATE_CREATE"], MakeTimeStamp
             </div><!--end item-->
 
 
-<?endwhile?> 
+<?endwhile?>
 					<div class="clear"></div>
 				</div>
 			</div>
             <? } ?>
-        
+
         <div class="clear"></div>
     </div>
 </main>

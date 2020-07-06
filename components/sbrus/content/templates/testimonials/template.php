@@ -18,173 +18,84 @@
 </div>
 
 
-<style>
+<div class="carousel slide" data-ride="carousel" id="carousel-t">
+    <div class="carousel-inner" role="listbox">
 
-    .slick-slide img {
-        width: 50% !important;
-    }
+        <?
+        $i = 0;
 
-    .testimonials {
-        overflow: hidden;
-        position: relative;
-    }
+        foreach ( $arResult["ITEMS"] as $arItem ) {
 
-    .one-slide,
-    .testimonial,
-    .message {
-        border: none !important;
-        outline: none !important;
-    }
+            $active = "";
 
-    .icon-overlay {
-        position: absolute;
-        opacity: 0.3;
-        right: 10%;
-        top: 0;
-        height: auto;
-        width: 100%;
-        max-width: 400px;
-    }
+            if ( $i === 0 ) {
+                $active = "active";
+            }
 
-    .carousel-controls .control {
-        padding-top: 20rem;
-        position: absolute;
-        transform: translateY(-50%);
-        width: 45px;
-        height: 45px;
-        color: #CEB5A1;
-        /*border-radius: 50%;*/
-        /*border: 2px solid #fff;*/
-        z-index: 1;
-    }
+            $style = " d-flex flex-row-reverse";
 
-    .prev {
-        left: -2.25rem;
-    }
+            ?>
+            <div class="carousel-item <?=$active?>">
+                <div class="row">
 
-    .next {
-        right: -2.25rem;
-    }
-
-    @media screen and (max-width: 768px) {
-        .testimonials {
-            max-height: 700px;
-        }
-        .icon-overlay {
-            height: 300px;
-            top: calc(50% - 150px);
-        }
-        .carousel-controls .control {
-            width: 25px;
-            height: 25px;
-            top: inherit;
-        }
-        .prev {
-            left: 0;
-        }
-        .next {
-            right: 0;
-        }
-        .control i {
-            font-size: .7rem;
-        }
-        .testimonials .message {
-            font-size: 1rem;
-        }
-        .testimonials h2 {
-            font-size: 1.5rem;
-        }
-    }
-
-
-
-</style>
-
-<section class="testimonials py-5 px-1 px-md-5 margin-top-xl">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-
-                <div class="carousel-controls testimonial-carousel-controls">
-                    <div class="control d-flex align-items-center justify-content-center prev mt-3"><i class="fa fa-chevron-left fa-2x"></i></div>
-                    <div class="control d-flex align-items-center justify-content-center next mt-3"><i class="fa fa-chevron-right fa-2x"></i></div>
-
-                    <div class="testimonial-carousel">
-
-                        <?
-                        $i = 0;
-                        foreach ( $arResult["ITEMS"] as $arItem ) {
-
-                        if ( $i % 2 ) {
-                        ?>
-                        <div class="row">
-                            <div class="col-md-4 d-flex flex-row-reverse">
-
-                                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;" class="img-responsive">
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <p><h4><?=$arItem['PROPERTIES']['FIO']['VALUE']?></h4></p>
-                                <p><?=$arItem['PROPERTIES']['POSITION']['VALUE']?></p>
-                                <p><?=$arItem['PREVIEW_TEXT']?></p>
-
-                            </div>
-                        </div>
-
-                    </div>
                     <?
-                    } else {
-                    ?>
-                    <div class="h5 font-weight-normal one-slide mx-auto">
-                        <div class="row">
-
-                            <div class="col-md-6 text-right">
-                                <p><h4><?=$arItem['PROPERTIES']['FIO']['VALUE']?></h4></p>
-                                <p><?=$arItem['PROPERTIES']['POSITION']['VALUE']?></p>
-                                <p><?=$arItem['PREVIEW_TEXT']?></p>
-
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;" width="100%" class="img-responsive">
-
-                            </div>
-
+                    if ( $i % 2 ) {
+                       ?>
+                        <div class="col-md-8 w-75 text-right">
+                            <p><h4><?=$arItem['PROPERTIES']['FIO']['VALUE']?></h4></p>
+                            <p><?=$arItem['PROPERTIES']['POSITION']['VALUE']?></p>
+                            <p><?=$arItem['PREVIEW_TEXT']?></p>
 
                         </div>
+
+                        <div class="col-md-4">
+
+                            <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;" class="img-responsive">
+
+                        </div>
+
                         <?
-                        }
-
-                        $i++;
-                        }
+                    } else {
                         ?>
+                        <div class="col-md-4 <?=$style?>">
+                            <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" style="padding-bottom: 1rem;" class="img-responsive">
+                        </div>
 
-                    </div>
+                        <div class="col-md-6 text-left">
+                            <p><h4><?=$arItem['PROPERTIES']['FIO']['VALUE']?></h4></p>
+                            <p><?=$arItem['PROPERTIES']['POSITION']['VALUE']?></p>
+                            <p><?=$arItem['PREVIEW_TEXT']?></p>
+                        </div>
+
+
+                        <?
+                    }
+                    ?>
+
+
 
                 </div>
             </div>
-        </div>
+
+
+            <?
+            $i++;
+        }
+        ?>
     </div>
-    </div>
-</section>
+    <div>
+        <a class="carousel-control-prev" href="#carousel-t" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"  style="background-image: url(/local/components/sbrus/content/templates/projects/images/previous.svg);"></span>
+            <span class="sr-only">Previous</span></a>
+        <a class="carousel-control-next" href="#carousel-t" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="background-image: url(/local/components/sbrus/content/templates/projects/images/next.svg);"></span>
+            <span class="sr-only">Next</span></a></div>
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-t" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-t" data-slide-to="1"></li>
+        <li data-target="#carousel-t" data-slide-to="2"></li>
+    </ol>
+</div>
 
 
-<script>
 
-
-    $(document).ready(function() {
-
-        $(".testimonial-carousel").slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: false,
-            arrows: true,
-            prevArrow: $(".testimonial-carousel-controls .prev"),
-            nextArrow: $(".testimonial-carousel-controls .next")
-        });
-    });
-
-</script>

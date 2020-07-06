@@ -16,15 +16,40 @@ $this->setFrameMode(true);
 
 		<div class="left_bar">
 			<div class="social_net_panel_menu">
-            	<? if ($arResult["DISPLAY_PROPERTIES"]['fb_link']){?>
-				<a href="<?=$arResult['PROPERTIES']['fb_link']['VALUE']?>" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-                <? } ?>
-                <? if ($arResult["DISPLAY_PROPERTIES"]['inst_link']){?>
-				<a href="<?=$arResult['PROPERTIES']['inst_link']['VALUE']?>" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
-                <? } ?>
-                <? if ($arResult["DISPLAY_PROPERTIES"]['tw_link']){?>
-				<a href="<?=$arResult['PROPERTIES']['tw_link']['VALUE']?>" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-                <? } ?>	
+
+
+                <?php
+                if ($arResult["DISPLAY_PROPERTIES"]['pinterest_link']) {
+                    ?>
+                    <a href="<?= $arResult['PROPERTIES']['pinterest_link']['VALUE'] ?>" target="_blank"><i class="fab fa-pinterest-p fa-2x"></i></a>
+                    <?
+                }
+
+                if ($arResult["DISPLAY_PROPERTIES"]['houzz_link']) {
+                    ?>
+                    <a href="<?= $arResult['PROPERTIES']['houzz_link']['VALUE'] ?>" target="_blank"><i class="fab fa-houzz fa-2x"></i></a>
+                    <?
+                }
+
+                if ($arResult["DISPLAY_PROPERTIES"]['fb_link']) {
+                    ?>
+                    <a href="<?= $arResult['PROPERTIES']['fb_link']['VALUE'] ?>" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <?
+                }
+
+                if ($arResult["DISPLAY_PROPERTIES"]['inst_link']) {
+                    ?>
+                    <a href="<?= $arResult['PROPERTIES']['inst_link']['VALUE'] ?>" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <?
+                }
+
+                if ($arResult["DISPLAY_PROPERTIES"]['tw_link']) {
+                    ?>
+                    <a href="<?= $arResult['PROPERTIES']['tw_link']['VALUE'] ?>" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    <?
+                }
+                ?>
+
 			</div>
 			<div class="copyright"><?=$arResult['PROPERTIES']['copy']['VALUE']?><?=date("Y")?></div>
 		</div>

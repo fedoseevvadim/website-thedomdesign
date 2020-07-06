@@ -16,8 +16,8 @@
 ?>
 <? //$GLOBALS["topF"] = array('IBLOCK_ID'=>9, 'PROPERTY_50' => 4);
 	$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section", 
-	"portfolio_top", 
+	"bitrix:catalog.section",
+	"portfolio_top",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_SECTIONS_CHAIN" => "N",

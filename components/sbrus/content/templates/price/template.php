@@ -66,7 +66,7 @@
                     }
 
                     ?>
-                    <div class="col-4 col-md-3 text-center" onclick="selectTariff(<?=$arItem['ID']?>)">
+                    <div class="col-6 col-md-3 col-sm-12 text-center" onclick="selectTariff(<?=$arItem['ID']?>)">
 
                         <div class="tariffHeight" style="padding-top: 1rem; <?=$color?>"  name="price" id="<?=$arItem['ID']?>">
                             <h4 style="padding-bottom: 1rem;"><?=$arItem['NAME']?></h4>

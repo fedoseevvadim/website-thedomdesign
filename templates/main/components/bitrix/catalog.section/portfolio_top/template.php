@@ -32,23 +32,25 @@ $this->setFrameMode(true);
                 </div>
 
 			</div>
-			  <section class="center slider_slik">			
+			  <section class="center slider_slik">
 					<?foreach ($arResult['ITEMS'] as $key => $arItem):?>
 						<?if(!empty($arItem['PROPERTIES']['in_top']['VALUE'])):?>
 							<?if(!empty($arItem['PROPERTIES']['top_pic_detail']['VALUE'])):?>
 								<?$file=CFile::ResizeImageGet($arItem['PROPERTIES']['top_pic_detail']['VALUE'], array('width'=>1048, 'height'=>624), BX_RESIZE_IMAGE_EXACT, true);?>
 								<?if($file['width']==1048 and $file['height']==624):?>
-									<div>				
+									<div>
 										<img src="<?=$file['src'];?>" alt="<?=$arItem['NAME']?>">
 									</div>
 								<?endif;?>
-							<?endif;?>	
-						<?endif;?>		
+							<?endif;?>
+						<?endif;?>
 					<?endforeach;?>
 			  </section>
 <div class="inner">
 		<div class="media_articles_list_inline">
 <?
+$page = 1;
+
 foreach ($arResult['ITEMS'] as $key => $arItem)
 {
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], $strElementEdit);
@@ -60,7 +62,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
     		<div class="item" id="<? echo $strMainID; ?>">
             	<div class="inn_item">
                 	<div class="image_block">
-                    	<a href="<? echo $arItem['DETAIL_PAGE_URL']; ?>" style="background-image: url(<? echo $arItem['PREVIEW_PICTURE']['SRC']; ?>);" class="cover"></a>
+                    	<a href="<? echo $arItem['DETAIL_PAGE_URL']; ?>?page=<?=$page?>" style="background-image: url(<? echo $arItem['PREVIEW_PICTURE']['SRC']; ?>);" class="cover"></a>
                     </div>
                     <div class="description">
                    
@@ -79,6 +81,8 @@ echo CIBlockFormatProperties::DateFormat($arParams["DATE_CREATE"], MakeTimeStamp
                 </div>
             </div><!--end item-->
     
-    <? } ?>
+    <?
+    $page++;
+} ?>
 			</div>
     	</div>
